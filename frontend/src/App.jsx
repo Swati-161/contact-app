@@ -9,7 +9,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
-    const res = await axios.get('${API_URL}/api/contacts');
+    const res = await axios.get(`${API_URL}/api/contacts`);
     setContacts(res.data);
   };
 
@@ -39,7 +39,7 @@ function ConnectionStatus() {
     const checkConnection = async () => {
       try {
         // Ensure this matches your backend PORT and /api path
-        const response = await axios.get('${API_URL}/api/contacts/test-connection');
+        const response = await axios.get(`${API_URL}/api/contacts/test-connection`);
         setStatus(response.data.message);
       } catch (err) {
         console.error("Connection Error Detail:", err);

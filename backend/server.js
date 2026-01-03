@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/contacts', require('./routes/contacts'));
 
-const PORT = 5001; 
-const uri = "mongodb+srv://Swati:ifmmptwimcano@cluster0.drwzmuj.mongodb.net/contact_db?appName=Cluster0";
+const PORT = process.env.PORT || 5001;
+const uri = process.env.MONGO_URI;
 
 // 3. Database Connection with detailed error handling
 mongoose.connect(uri)

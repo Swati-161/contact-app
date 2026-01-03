@@ -7,7 +7,7 @@ const app = express();
 
 // 1. Detailed CORS Debugging
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   optionsSuccessStatus: 200 
 }));

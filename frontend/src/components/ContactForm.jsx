@@ -12,7 +12,7 @@ const ContactForm = ({ refreshList }) => {
     e.preventDefault();
     try {
         // Full URL is required unless you've set up a proxy
-        await axios.post('http://localhost:5001/api/contacts', formData); 
+        await axios.post('https://contact-app-coik.onrender.com', formData); 
         setStatus({ type: 'success', msg: 'Contact saved successfully!' });
         refreshList(); 
         setFormData({ name: '', email: '', phone: '', message: '' });

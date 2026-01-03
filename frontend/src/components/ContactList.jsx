@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+const API_URL = 'https://contact-app-coik.onrender.com';
+
 const ContactList = ({ contacts, refreshList }) => {
   const handleDelete = async (id) => {
     if (window.confirm("Delete this contact?")) {
-      await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+      await axios.delete(`${API_URL}/api/contacts/${id}`);
       refreshList();
     }
   };
